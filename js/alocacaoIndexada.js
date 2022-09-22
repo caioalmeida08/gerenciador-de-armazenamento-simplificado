@@ -28,9 +28,12 @@ class MemoriaIndexada {
 
   // * Método responsavel pela alocação encadeada
   criarArquivo(tamanhoArquivo) {
+    if (tamanhoArquivo < 0) {
+      throw "O tamanho mínimo do arquivo não foi atingido (deve ser maior que 0)";
+    }
     // checa se há espaço suficiente em disco
     if (this.checarEspaco() - 1 < tamanhoArquivo) {
-      throw "Não foi possível gravar o arquivo";
+      throw "Não foi possível gravar o arquivo, espaço insuficiente";
     }
 
     // itera pela memoria e armazena os blocos em que serão gravados arquivos

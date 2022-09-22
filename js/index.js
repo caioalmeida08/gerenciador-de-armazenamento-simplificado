@@ -80,12 +80,14 @@ $(() => {
   });
   // Função utilizada para comunicar a criação de um novo arquivo
   $("#criar_arquivo").on("click", () => {
-    // coleta os dados do input
-    let tamanhoArquivo = $("input[name='tamanho_arquivo']").val();
-
     try {
+      // coleta os dados do input
+      let tamanhoArquivo = $("input[name='tamanho_arquivo']").val();
       // envia os dados ao back-end e aguarda resposta
       memoria = mudarMemoria($("#tipo_alocacao").val());
+      if (!memoria) {
+        throw "Memoria não inicializada";
+      }
       memoria.criarArquivo(tamanhoArquivo);
       // tenta renderizar a resposta
       renderizar(memoria);

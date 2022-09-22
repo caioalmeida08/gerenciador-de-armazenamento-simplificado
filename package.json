@@ -1,0 +1,22 @@
+{
+  "name": "caioalmeida008.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caioalmeida08/caioalmeida008.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caioalmeida08/caioalmeida008.github.io/issues"
+  },
+  "homepage": "https://github.com/caioalmeida08/caioalmeida008.github.io#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

@@ -28,14 +28,17 @@ class MemoriaEncadeada {
 
   // * Método responsavel pela alocação encadeada
   criarArquivo(tamanhoArquivo) {
+    if (tamanhoArquivo < 0) {
+      throw "O tamanho mínimo do arquivo não foi atingido (deve ser maior que 0)";
+    }
     // checa se há espaço suficiente em disco
     if (this.checarEspaco() < tamanhoArquivo) {
-      throw "Não foi possível gravar o arquivo";
+      throw "Não foi possível gravar o arquivo, espaço insuficiente";
     }
 
     let contadorBlocosGravados = 0;
 
-    // grava o arquivo no disco
+    // roda por todos os blocos da memoria
     for (let i = 0; i < this.quantidadeBloco; i++) {
       // checa se o arquivo ja foi totalmente gravado
       if (contadorBlocosGravados == tamanhoArquivo) {
